@@ -1,2 +1,20 @@
 # Group-Project-1
-Project 1 for the web development project
+
+## Description
+
+
+
+## Installation
+
+
+
+## Usage
+
+
+
+## Credits
+
+
+
+## License
+
