@@ -1,3 +1,4 @@
+//console logging the poll data
 $.ajax({
     url: 'https://api.pollsapi.com/v1/get/polls-with-identifier/MUSKVZUCK',
     crossDomain: true,
@@ -8,4 +9,3 @@ $.ajax({
   }).done(function(response) {
     console.log(response);
   });
-  
