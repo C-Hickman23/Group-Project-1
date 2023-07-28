@@ -1,7 +1,7 @@
-var muskCount = $.getElementById("muskCount");
-var muskVote = $.getElementById("muskVote");
-var zuckCount = $.getElementById("zuckCount");
-var zuckVote = $.getElementById("zuckVote");
+var muskCount = document.getElementById("muskCount");
+var muskVote = document.getElementById("muskVote");
+var zuckCount = document.getElementById("zuckCount");
+var zuckVote = document.getElementById("zuckVote");
 
 //console logging the poll data
 $.ajax({
@@ -24,28 +24,51 @@ function updateNumbers() {
       'api-key': 'B4VF6779FFMDRPKN7ZXWEBTAPDX3'
     }
   }).done(function(response) {
-    muskCount.textContent = response.children().children().children().children()[0].votes_count;
-    zuckCount.textContent = response.children().children().children().children()[1].votes_count;
+    // console.log(response.data.docs[0].options[0].votes_count);
+    muskCount.textContent = response.data.docs[0].options[0].votes_count;
+    zuckCount.textContent = response.data.docs[0].options[1].votes_count;
 });
 }
 
 muskVote.addEventListener("click", function() {
-  fetch('https://api.pollsapi.com/v1/get/vote/64c0863225e6ed0010f8aac3', {
-  headers: {
-    'content-type': 'application/json',
-    'api-key': 'B4VF6779FFMDRPKN7ZXWEBTAPDX3'
-  }
-});
+  $.ajax({
+    url: 'https://api.pollsapi.com/v1/create/vote',
+    crossDomain: true,
+    method: 'post',
+    headers: {
+      'api-key': 'B4VF6779FFMDRPKN7ZXWEBTAPDX3'
+    },
+    contentType: 'application/json',
+    // data: '\n  {\n      "poll_id": "64c0863225e6ed0010f8aac2",\n      "option_id": "64c0863225e6ed0010f8aac3",\n      "identifier": "user_12"\n  }\n  ',
+    data: JSON.stringify({
+      'poll_id': '64c0863225e6ed0010f8aac2',
+      'option_id': '64c0863225e6ed0010f8aac3',
+      'identifier': 'user_12'
+    })
+  }).done(function(response) {
+    console.log(response);
+  });
   updateNumbers();
 })
 
-muskVote.addEventListener("click", function() {
-  fetch('https://api.pollsapi.com/v1/get/vote/64c0863225e6ed0010f8aac4', {
-  headers: {
-    'content-type': 'application/json',
-    'api-key': 'B4VF6779FFMDRPKN7ZXWEBTAPDX3'
-  }
-});
+zuckVote.addEventListener("click", function() {
+  $.ajax({
+    url: 'https://api.pollsapi.com/v1/create/vote',
+    crossDomain: true,
+    method: 'post',
+    headers: {
+      'api-key': 'B4VF6779FFMDRPKN7ZXWEBTAPDX3'
+    },
+    contentType: 'application/json',
+    // data: '\n  {\n      "poll_id": "64c0863225e6ed0010f8aac2",\n      "option_id": "64c0863225e6ed0010f8aac3",\n      "identifier": "user_12"\n  }\n  ',
+    data: JSON.stringify({
+      'poll_id': '64c0863225e6ed0010f8aac2',
+      'option_id': '64c0863225e6ed0010f8aac4',
+      'identifier': 'user_12'
+    })
+  }).done(function(response) {
+    console.log(response);
+  });
   updateNumbers();
 })
 
