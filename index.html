@@ -6,8 +6,6 @@
     <title>Social Media Showdown</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="./assets/js/polling.js"></script>
-    
   </head>
 
   <body>
@@ -19,8 +17,45 @@
       <p class="subtitle">
         Countdown to the<strong> CAGE FIGHT!</strong>
       </p>
-
-      <!-- insert countdown -->
+      <head>
+        <title>Countdown Timer</title>
+      </head>
+      <body>
+      
+        <h1>Countdown Timer</h1>
+        <p id="countdown"></p>
+      
+        <script>
+          // Set the target date and time for the countdown (YYYY, MM, DD, HH, mm, ss)
+          const targetDate = new Date("2023-10-31T23:59:59").getTime();
+      
+          // Update the countdown every second
+          const interval = setInterval(function() {
+            // Get the current date and time
+            const now = new Date().getTime();
+      
+            // Calculate the remaining time in milliseconds
+            const timeRemaining = targetDate - now;
+      
+            // Calculate days, hours, minutes, and seconds
+            const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+      
+            // Display the countdown in the element with the id "countdown"
+            document.getElementById("countdown").innerHTML = `Time Remaining: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+      
+            // If the countdown is over, display a message
+            if (timeRemaining < 0) {
+              clearInterval(interval);
+              document.getElementById("countdown").innerHTML = "Countdown is over!";
+            }
+          }, 1000); // 1000 milliseconds = 1 second
+        </script>
+      
+      </body>
+      
 
     </div>
 <br></br>
@@ -38,16 +73,25 @@
 
     </section>
 
+    <br> </br>
+
+    <!-- buttons for polling -->
+  <div class ="columns">
+     <div class="column"></div>
+     <p id="muskCount"></p>
+      <div class="column"></div>
+     <p id="zuckCount"></p>
+
 <br> </br>
 
   <!-- buttons for polling -->
 <div class ="columns">
    <div class="column"></div> 
-   <button class="button is-link">
+   <button class="button is-link" id="muskVote">
     MUSK
   </button>
     <div class="column"></div>
-   <button class="button is-link">
+   <button class="button is-link" id="zuckVote">
     ZUCK
   </button>
   </div>
@@ -69,7 +113,7 @@
   <div class="card">
     <div class="card-image">
       <figure class="image is-4by3">
-        <img src="assets/STK160_X_Twitter_008.jpg" alt="Twitter X logo">
+        <img src="assets/tesla-logo-E72BB35180-seeklogo.com.png" alt="Tesla logo ">
       </figure>
     </div>
     <div class="card-content">
@@ -136,5 +180,6 @@
     </div>
   </div>
 
+  <script src="./assets/js/polling.js"></script>
   </body>
 </html>
