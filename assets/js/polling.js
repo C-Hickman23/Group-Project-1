@@ -48,3 +48,5 @@ muskVote.addEventListener("click", function() {
 });
   updateNumbers();
 })
+
+updateNumbers();
