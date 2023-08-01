@@ -79,6 +79,7 @@ muskVote.addEventListener("click", function() {
   updateNumbers();
 })
 
+//if the Zuck button is pushed
 zuckVote.addEventListener("click", function() {
   //checking to see if user submitted a alternate vote to see if one needs to be removed
   if(localStorage.Vote == "Musk"){
@@ -123,4 +124,5 @@ zuckVote.addEventListener("click", function() {
   updateNumbers();
 })
 
+//initial numbers udpate
 updateNumbers();
