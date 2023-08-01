@@ -1,4 +1,4 @@
-<script>
+
  {/* Set the target date and time for the countdown (YYYY, MM, DD, HH, mm, ss) */}
    const targetDate = new Date("2023-10-31T23:59:59").getTime();
 
@@ -25,4 +25,3 @@
     document.getElementById("countdown").innerHTML = "Countdown is over!";
   }
 }, 1000); // 1000 milliseconds = 1 second
-</script>

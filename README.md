@@ -6,9 +6,9 @@ Project One for University of Utah Web Developement
 A website to find live stock and polling data awaiting the infamous cage fight
 
 
-## Installation
-No installtion or login required.
-
+## links
+Deployed page: https://c-hickman23.github.io/Musk-Vs.-Zuck/
+Repository: https://github.com/C-Hickman23
 
 ## Usage
 Users can find the latest info on Twitter Vs. Facebook stocks and interact with a live poll
