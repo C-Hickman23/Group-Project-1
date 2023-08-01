@@ -13,7 +13,7 @@ $.ajax({
     }
   }).done(function(response) {
     console.log(response);
-    if(localStorage.Vote !== "Musk" || localStorage.Vote !== "Zuck"){
+    if(localStorage.Vote != "Musk" || localStorage.Vote != "Zuck"){
       localStorage.setItem("Vote", "none");
     }
 });
