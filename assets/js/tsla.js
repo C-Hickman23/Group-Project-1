@@ -12,6 +12,7 @@ async function displayRegularMarketPrice() {
   try {
     var response = await fetch(url, options);
     var data = await response.json();
+    //stores data from API for TSLA
     var timeSeriesDaily = data ["Time Series (Daily)"];
    
     //Finds keys for the latest market price from object in array
