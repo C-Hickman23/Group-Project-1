@@ -6,33 +6,82 @@
     <title>Social Media Showdown</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="./assets/js/polling.js"></script>
   </head>
+
   <body>
   <section class="section">
     <div class="container">
-      <h1 class="title">
+      <h1 class="title is-1">
         Musk VS Zuck
       </h1>
       <p class="subtitle">
-        Countdown to the<strong> CAGE FIGHT!</strong>!
+        Countdown to the<strong> CAGE FIGHT!</strong>
       </p>
-    </div>
+      
+      <body>
 
+        <p id="countdown"></p>
+      
+        <script>
+          // Set the target date and time for the countdown (YYYY, MM, DD, HH, mm, ss)
+          const targetDate = new Date("2023-10-31T23:59:59").getTime();
+      
+          // Update the countdown every second
+          const interval = setInterval(function() {
+            // Get the current date and time
+            const now = new Date().getTime();
+      
+            // Calculate the remaining time in milliseconds
+            const timeRemaining = targetDate - now;
+      
+            // Calculate days, hours, minutes, and seconds
+            const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+      
+            // Display the countdown in the element with the id "countdown"
+            document.getElementById("countdown").innerHTML = `Time Remaining: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+      
+            // If the countdown is over, display a message
+            if (timeRemaining < 0) {
+              clearInterval(interval);
+              document.getElementById("countdown").innerHTML = "Countdown is over!";
+            }
+          }, 1000); // 1000 milliseconds = 1 second
+        </script>
+      
+      </body>
+      
+
+    </div>
+<br></br>
+<div class="notification">
     <!-- insert hero -->
     <section class = "hero">
       <div class = "hero-body">
         <div class = "container">
            <h1 class="title">Fight Poll</h1>
             <h2 class="subtitle">Vote for your favorite</h2>
+
+            <!-- insert poll API link -->
         </div>
 
 
     </section>
 
+    <br> </br>
 
+    <!-- buttons for polling -->
+  <div class ="columns">
+     <div class="column"></div>
+     <p id="muskCount"></p>
+      <div class="column"></div>
+     <p id="zuckCount"></p>
 
-  <!-- columns -->
+<br> </br>
+
+  <!-- buttons for polling -->
 <div class ="columns">
    <div class="column" id="tsla-container">1 - TSLA</div>
    <button id="tsla-button">
@@ -41,78 +90,103 @@
    <div class="column" id="meta-container">2 - META</div>
    <button id="meta-button">
     META
-  </button>
-   <div class="column">3 - Musk</div>
-   <button class="button is-link">
+   <div class="column"></div> 
+   <button class="button is-link" id="muskVote">
     MUSK
   </button>
-   <div class="column">4 - Zuck</div>
-   <button class="button is-link">
+    <div class="column"></div>
+   <button class="button is-link" id="zuckVote">
     ZUCK
   </button>
+  </div>
+
+  <!-- buttons &/or links for stocks if needed-->
+   <!-- <div class="column">3 - TWTR</div>
+   <button class="button is-link">
+    TWTR
+  </button>
+   <div class="column">4 - META</div>
+   <button class="button is-link">
+    META
+  </button> -->
 
 
 </div>
   </section>
-
+<!-- card 1 MUSK -->
   <div class="card">
     <div class="card-image">
       <figure class="image is-4by3">
-        <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+        <img src="assets/tesla-logo-E72BB35180-seeklogo.com.png" alt="Tesla logo ">
       </figure>
     </div>
     <div class="card-content">
       <div class="media">
         <div class="media-left">
           <figure class="image is-48x48">
-            <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+            <img src="assets/elon.webp" alt="Elon Musk image">
           </figure>
         </div>
         <div class="media-content">
           <p class="title is-4">Elon Musk</p>
-          <p class="subtitle is-6">@ElonMusk</p>
+          <p class="subtitle is-6">Billionare</p>
         </div>
       </div>
   
       <div class="content">
-        Lorem ipsum dolor sit amet, consectetur adipiscing eli
-         Phasellus nec iaculis mauris. <a href="https://Twitter.com/ElonMusk" >@ElonMusk</a>
-        <a href="#">#css</a> <a href="#">#responsive</a>
+        <ul>
+          <li>Age: 52 years</li>
+          <li>Height: 5ft 11in</li>
+          <li>Weight: 180lbs</li>
+          <li>Net Worth: $239.9 Billion</li>
+        </ul>
+        <a href="https://Twitter.com/ElonMusk" class="button is-dark">@ElonMusk</a>
+        <!-- <a href="#">#css</a> <a href="#">#responsive</a> -->
         <br>
         <!-- <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time> -->
       </div>
     </div>
   </div>
 
+
+  <!-- card 2 ZUCK-->
   <div class="card">
     <div class="card-image">
       <figure class="image is-4by3">
-        <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+        <img src="assets/meta-g826b28fa1_1280.jpg" alt="meta logo">
       </figure>
     </div>
     <div class="card-content">
       <div class="media">
         <div class="media-left">
           <figure class="image is-48x48">
-            <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+            <img src="assets/zuck.jpg" alt="Mark Zuckerberg image">
           </figure>
         </div>
         <div class="media-content">
           <p class="title is-4">Mark Zuckerberg</p>
-          <p class="subtitle is-6">@Zuck</p>
+          <p class="subtitle is-6">Billionare</p>
         </div>
       </div>
   
       <div class="content">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Phasellus nec iaculis mauris. <a href="https://www.facebook.com/zuck/">@Zuck</a>.
-        <a href="#">#css</a> <a href="#">#responsive</a>
+        <ul>
+          <li>Age: 38 years</li>
+          <li>Height: 5ft 7in</li>
+          <li>Weight: 154lbs</li>
+          <li>Net Worth: $105.8 Billion</li>
+        </ul>
+        <a href="https://www.facebook.com/zuck/" class="button is-dark">@Zuck</a>
+        <!-- <a href="#">#css</a> <a href="#">#responsive</a> -->
         <br>
         <!-- <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time> -->
       </div>
     </div>
   </div>
+
 <script src="assets/js/tsla.js"></script>
 <script src="assets/js/meta.js"></script>
+
+  <script src="./assets/js/polling.js"></script>
   </body>
 </html>
