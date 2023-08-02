@@ -56,9 +56,10 @@
 
     </div>
 <br></br>
-<div class="notification">
+
+<div class="notification has-background-dark">
     <!-- insert hero -->
-    <section class = "hero">
+    <section class = "hero has-text-light">
       <div class = "hero-body">
         <div class = "container">
            <h1 class="title has-text-centered">Fight Poll</h1>
@@ -66,63 +67,87 @@
 
             <!-- insert poll API link -->
         </div>
-
-
     </section>
 
     <br> </br>
+<!-- Votes count text -->
+  <div class ="columns has-text-light">
+    <div class="column center is-size-4">
+      <h2>Votes for Elon Musk:</h2>
+    </div>
+    <div class="column center is-size-2">
+    </div>
+    <div class="column center is-size-4">
+      <h2>Votes for Mark Zuckerberg:</h2>
+    </div>
+  </div>
 
-<!-- row for polling numbers -->
-<div class ="columns">
-  <div class="column">
-     <p id="muskCount"></p>
+  <!-- row for polling numbers -->
+  <div class ="columns has-text-light">
+    <div class="column center is-size-3">
+      <h2 id="muskCount"></h2>
+    </div>
+    <div class="column center is-size-2">
+      <h2>VS</h2>
+    </div>
+    <div class="column center is-size-3">
+      <h2 id="zuckCount"></h2>
+    </div>
   </div>
-  <div class="column">
-     <p id="zuckCount"></p>
-  </div>
-</div>
 
-<br> </br>
-
-<!-- Row for polling buttons -->
-<div class ="columns">
-  <div class="column">
-    <button class="button is-link is-danger" id="muskVote">
-      MUSK
-    </button>
-  </div>
-  <div class="column">
-    <button class="button is-link" id="zuckVote">
-      ZUCK
-    </button>
-  </div>
-</div>
-
-<!-- Row for stock buttons -->
-<div class="columns center has-background-dark">
-  <div class="column center">
-    <p id="tsla-container" class="is-size-4 has-text-danger-dark">Press button below for TSLA stock price.</p>
-  </div>
-  <div class="column center">
-    <p id="meta-container" class="is-size-4 has-text-link">Press button below for META stock price.</p>
-  </div>
-</div>
-
-<div class="columns center has-background-dark">
-  <div class="column center">
-      <button class="button is-large is-danger is-light" id="tsla-button">
-        TSLA
+  <!-- Row for polling buttons -->
+  <div class ="columns has-text-light">
+    <div class="column center">
+      <button class="button is-link is-danger" id="muskVote">
+        Vote For MUSK
       </button>
-  </div>
-  <div class="column center">
-      <button class="button is-large is-link is-light" id="meta-button">
-        META
+    </div>
+    <div class="column"></div>
+    <div class="column center">
+      <button class="button is-link" id="zuckVote">
+        Vote For ZUCK
       </button>
+    </div>
+  </div>
+
+</div>
+
+<div class="notification has-background-dark">
+    <!-- insert hero -->
+    <section class = "hero has-text-light">
+      <div class = "hero-body">
+        <div class = "container">
+           <h1 class="title has-text-centered">Stock Counts</h1>
+            <h2 class="subtitle has-text-centered">Click to get current market prices</h2>
+
+            <!-- insert poll API link -->
+        </div>
+    </section>
+  <!-- Row for stock buttons -->
+  <div class="columns center has-background-dark">
+    <div class="column center">
+      <p id="tsla-container" class="is-size-4 has-text-danger-dark">Press button below for TSLA stock price.</p>
+    </div>
+    <div class="column center">
+      <p id="meta-container" class="is-size-4 has-text-link">Press button below for META stock price.</p>
+    </div>
+  </div>
+
+  <div class="columns center has-background-dark">
+    <div class="column center">
+        <button class="button is-large is-danger is-light" id="tsla-button">
+          TSLA
+        </button>
+    </div>
+    <div class="column center">
+        <button class="button is-large is-link is-light" id="meta-button">
+          META
+        </button>
+    </div>
   </div>
 </div>
 
-</div>
-  </section>
+</section>
 <!-- card 1 MUSK -->
 <div class="columns">
   <div class="column is-half">
