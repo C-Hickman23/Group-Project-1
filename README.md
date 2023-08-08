@@ -1,6 +1,6 @@
 # Group-Project-One (Musk Vs. Zuck)
 Project One for University of Utah Web Developement
-
+![](assets/mvz.png)
 
 ## Description
 A website to find live stock and polling data awaiting the infamous cage fight.
